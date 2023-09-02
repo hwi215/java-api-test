@@ -1,23 +1,21 @@
 package javaAPI.test0;
 
 import com.sun.net.httpserver.HttpServer;
+import javaAPI.gitTest.JavaJjangPostHandler;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
 
-public class Main {
+public class JavaServer {
 
-    public static void main(String[] args) throws IOException {
-        JavaServer server = new JavaServer();
+    private Integer port = 5678;
+    private HttpServer server = null;
+    public JavaServer() throws IOException {
 
-        /*
-        int port = 5678;
-        HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
+        server = HttpServer.create(new InetSocketAddress(port), 0);
         server.createContext("/", new MyHandler());
         server.setExecutor(null);
         server.start();
         System.out.println("server started on port " + port);
-
-         */
     }
 }
