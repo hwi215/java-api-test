@@ -48,7 +48,7 @@ public class MyHandler3 implements HttpHandler {
  */
 
         //
-        String filePath = "/Users/gimhwigyeong/Desktop/hwi/project/javaAPI/src/main/java/javaAPI/test0/user2.json";
+        String filePath = "/Users/gimhwigyeong/Desktop/hwi/project/javaAPI/src/main/java/javaAPI/data/user2.json";
         try {
 
             JsonReader jsonReader = new JsonReader(new FileReader(filePath));
