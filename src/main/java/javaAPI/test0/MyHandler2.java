@@ -68,27 +68,11 @@ public class MyHandler2 implements HttpHandler {
 
 
 
-
-            /*
-
-            FileReader fileReader = new FileReader("/javaAPI/test0/user.json");
-            String jsonData = "{\"user_id\":\"1\", \"username\":\"hwi\"}";
-            System.out.println("filereader: " + fileReader);
-            JsonObject jsonObject = (JsonObject) JsonParser.parseString(String.valueOf(fileReader));
-
-            fileReader.close();
-            System.out.println(jsonObject);
-            */
         }catch (Exception e){
             System.out.println("error");
             e.printStackTrace();
         }
-   /*
-        int user_id = jsonObject.get("user_id").getAsInt();
-        String username = jsonObject.get("username").getAsString();
-        System.out.println("user_id: " + user_id + ", username: " + username);
 
-         */
 
 
 

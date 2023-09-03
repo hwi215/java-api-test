@@ -51,6 +51,8 @@ public class MyHandler3 implements HttpHandler {
 
         //
         String filePath = "/Users/gimhwigyeong/Desktop/hwi/project/javaAPI/src/main/java/javaAPI/data/user2.json";
+
+        String jsonStr = "";
         try {
 
             JsonReader jsonReader = new JsonReader(new FileReader(filePath));
@@ -83,28 +85,22 @@ public class MyHandler3 implements HttpHandler {
 
             JsonObject resultObject = new JsonObject();
             resultObject.addProperty("sum", sum);
-            String jsonStr = gson.toJson(resultObject);
+            jsonStr = gson.toJson(resultObject);
 
             exchange.getResponseHeaders().add("Content-Type", "application/json"); // 응답 헤더 설정
             exchange.sendResponseHeaders(200, jsonStr.getBytes().length); // 응답 코드와 길이 설정
 
+        }catch (Exception e){
+            System.out.println("error");
+            exchange.getResponseHeaders().add("Content-Type", "application/json"); // 응답 헤더 설정
+            exchange.sendResponseHeaders(500, jsonStr.getBytes().length); // 응답 코드와 길이 설정
+            e.printStackTrace();
+        }finally {
             OutputStream os = exchange.getResponseBody();
             os.write(jsonStr.getBytes());
             os.close();
 
-
-        }catch (Exception e){
-            System.out.println("error");
-            e.printStackTrace();
         }
-
-
-
-
-
-
-
-
 
 
 
