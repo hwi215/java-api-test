@@ -1,0 +1,22 @@
+[
+  {
+    "user_id": 123,
+    "username": "abc",
+    "post_count": 10
+  },
+  {
+    "user_id": 111,
+    "username": "abc2",
+    "post_count": 20
+  },
+  {
+    "user_id": 200,
+    "username": "abc3",
+    "post_count": 30
+  },
+  {
+    "user_id": 300,
+    "username": "abc4",
+    "post_count": 45
+  }
+]

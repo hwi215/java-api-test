@@ -13,7 +13,8 @@ public class JavaServer {
     public JavaServer() throws IOException {
 
         server = HttpServer.create(new InetSocketAddress(port), 0);
-        server.createContext("/", new MyHandler());
+        //server.createContext("/", new MyHandler());
+        server.createContext("/", new MyHandler2());
         server.setExecutor(null);
         server.start();
         System.out.println("server started on port " + port);
