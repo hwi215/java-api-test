@@ -16,6 +16,7 @@ public class JavaServer {
         server = HttpServer.create(new InetSocketAddress(port), 0);
         server.createContext("/", new MyHandler());
         server.createContext("/sum", new MyHandler3());
+        server.createContext("/user", new MyHandler4());
         server.setExecutor(null);
         server.start();
         System.out.println("server started on port " + port);
