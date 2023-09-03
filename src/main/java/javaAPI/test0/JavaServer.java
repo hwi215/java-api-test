@@ -1,5 +1,6 @@
 package javaAPI.test0;
 
+import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 import javaAPI.gitTest.JavaJjangPostHandler;
 
@@ -13,8 +14,8 @@ public class JavaServer {
     public JavaServer() throws IOException {
 
         server = HttpServer.create(new InetSocketAddress(port), 0);
-        //server.createContext("/", new MyHandler());
-        server.createContext("/", new MyHandler3());
+        server.createContext("/", new MyHandler());
+        server.createContext("/sum", new MyHandler3());
         server.setExecutor(null);
         server.start();
         System.out.println("server started on port " + port);

@@ -10,6 +10,8 @@ import org.json.simple.JSONArray;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.Map;
 import java.util.Set;
 
@@ -79,10 +81,23 @@ public class MyHandler3 implements HttpHandler {
 
             System.out.println("모든 user의 post_count의 합: " + sum);
 
+            JsonObject resultObject = new JsonObject();
+            resultObject.addProperty("sum", sum);
+            String jsonStr = gson.toJson(resultObject);
+
+            exchange.getResponseHeaders().add("Content-Type", "application/json"); // 응답 헤더 설정
+            exchange.sendResponseHeaders(200, jsonStr.getBytes().length); // 응답 코드와 길이 설정
+
+            OutputStream os = exchange.getResponseBody();
+            os.write(jsonStr.getBytes());
+            os.close();
+
+
         }catch (Exception e){
             System.out.println("error");
             e.printStackTrace();
         }
+
 
 
 
